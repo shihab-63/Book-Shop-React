@@ -7,7 +7,9 @@ const Layouts = () => {
   return (
     <div>
       <Header />
-      <Outlet />
+      <main className="container mx-auto px-3 md:px-0 min-h-[calc(100vh-288px)]">
+        <Outlet />
+      </main>
       <Footer />
     </div>
   );

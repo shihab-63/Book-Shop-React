@@ -6,11 +6,11 @@ const ErrorPage = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-green-50 px-4 text-center">
-      <h1 className="text-9xl font-extrabold text-green-600 mb-4 drop-shadow-md">
+      <h1 className="text-4xl md:text-9xl font-extrabold text-green-600 mb-4 drop-shadow-md">
         {error.status || "Oops!"}
       </h1>
 
-      <h2 className="text-4xl font-bold text-gray-800 mb-4">
+      <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4">
         {error.status === 404 ? "Page Not Found!" : "Something went wrong!"}
       </h2>
 
