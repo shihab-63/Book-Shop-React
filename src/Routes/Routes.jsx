@@ -6,6 +6,7 @@ import ErrorPage from "../Pages/ErrorPage";
 import ListedBooks from "../Pages/ListedBooks";
 import PagesToRead from "../Pages/PagesToRead";
 import axios from "axios";
+import BookDetails from "../components/BookDetails/BookDetails";
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +30,14 @@ export const router = createBrowserRouter([
       {
         path: "/pages-to-read",
         Component: PagesToRead,
+      },
+      {
+        path: "/bookDetails/:id",
+        Component: BookDetails,
+        loader: async () => {
+          const response = await axios("/booksData.json");
+          return response.data;
+        },
       },
     ],
   },
