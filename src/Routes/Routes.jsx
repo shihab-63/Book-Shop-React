@@ -5,6 +5,7 @@ import Home from "../Pages/Home";
 import ErrorPage from "../Pages/ErrorPage";
 import ListedBooks from "../Pages/ListedBooks";
 import PagesToRead from "../Pages/PagesToRead";
+import axios from "axios";
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ export const router = createBrowserRouter([
         index: true,
         path: "/",
         Component: Home,
+        loader: async () => {
+          const response = await axios("/booksData.json");
+          return response.data;
+        },
       },
       {
         path: "/listed-books",
